@@ -5,7 +5,7 @@ import { JobDetailPage } from "@/pages/JobDetailPage"
 import { JobsPage } from "@/pages/JobsPage"
 import { NotFoundPage } from "@/pages/NotFoundPage"
 import { createBrowserRouter } from "react-router"
-
+import { getJobs } from "@/services/jobs-service"
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -18,6 +18,7 @@ export const router = createBrowserRouter([
             {
                 path: 'jobs',
                 element: <JobsPage/>,
+                loader: () => getJobs(),
             },
             {
                 path: 'jobs/:slug',
