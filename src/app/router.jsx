@@ -6,6 +6,8 @@ import { JobsPage } from "@/pages/JobsPage"
 import { NotFoundPage } from "@/pages/NotFoundPage"
 import { createBrowserRouter } from "react-router"
 import { getJobs } from "@/services/jobs-service"
+import { homeLoader } from "@/loaders/home-loader"
+
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -14,6 +16,7 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 element: <HomePage/>,
+                loader: homeLoader
             },
             {
                 path: 'jobs',
